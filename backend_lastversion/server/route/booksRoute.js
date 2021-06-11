@@ -15,7 +15,8 @@ router.get("/book/:id",async function(req,res){
 });
 
 router.delete('/book/:id',async function(req,res){
-   return res.json([{message:'registro excluido com sucesso'}]); 
+    booksService.deleteBook(req.params.id);
+    return res.json([{message:'registro excluido com sucesso'}]); 
 });
 
 router.put('/book',async function(req,res) {

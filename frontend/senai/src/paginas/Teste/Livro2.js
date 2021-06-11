@@ -51,7 +51,7 @@ export default function ListaLivro() {
     api.get('books',{}).then(response => {
         setLivros(response.data);
     });
-}, []);  
+}, []);
 
   return (
     <TableContainer component={Paper}>
@@ -69,9 +69,9 @@ export default function ListaLivro() {
           {livros.map(livro => (
             <StyledTableRow  key={livro.idlivro}>
               <StyledTableCell  component="th" scope="row" align="right">
-                {livro.codigo}
+                {livro.idlivro}
               </StyledTableCell>
-              <StyledTableCell  align="right">{livro.titulo}</StyledTableCell >
+              <StyledTableCell  align="right">{livro.nome}</StyledTableCell >
               <StyledTableCell  align="right">{livro.isbn}</StyledTableCell >
               <StyledTableCell  align="right">{livro.quantidade}</StyledTableCell >
               <StyledTableCell  align="center">
@@ -83,3 +83,5 @@ export default function ListaLivro() {
     </TableContainer>
   );
 }
+
+

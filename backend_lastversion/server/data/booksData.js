@@ -9,7 +9,7 @@ exports.getBook = function(bookID){
 }
 
 exports.deleteBook = function(bookID){
-    return database.none('delete from livro where codigo = $1',[bookID]);
+    return database.none('delete from livro where idlivro = $1',[bookID]);
 }
 
 exports.saveBook = function(book){
