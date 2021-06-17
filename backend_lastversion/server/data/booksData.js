@@ -13,5 +13,5 @@ exports.deleteBook = function(bookID){
 }
 
 exports.saveBook = function(book){
-    return database.one('insert into livro (codigo,nome,codigoeditora,isbn,quantidade,codigoassunto) values ($1,$2,$3,$4,$5,$6) returning *',
-    [book.codigo,book.nome,book.codigoeditora,book.isbn,book.quantidade,book.codigoassunto])};
+    return database.one('insert into livro (nome,editora,isbn,quantidade,assunto,autor) values ($1,$2,$3,$4,$5,$6) returning *',
+    [book.nome,book.editora,book.isbn,book.quantidade,book.assunto,book.autor])};

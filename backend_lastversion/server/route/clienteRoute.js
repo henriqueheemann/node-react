@@ -14,11 +14,11 @@ router.get("/cliente/:id",async function(req,res){
  
 });
 
-router.delete('/assunto/:id',async function(req,res){
+router.delete('/cliente/:id',async function(req,res){
    return res.json([{message:'registro excluido com sucesso'}]); 
 });
 
-router.put('/cliente',async function(req,res) {
+router.post('/cliente',async function(req,res) {
     const cliente = req.body;
     const newCliente = await clienteService.saveCliente(cliente);
     res.json(newCliente);

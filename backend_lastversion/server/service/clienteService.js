@@ -10,6 +10,6 @@ exports.getCliente = function(clienteID){
 exports.deleteCliente = function(clienteID){
     return clienteData.getCLiente(clienteID);
 }
-exports.saveBook = function(cliente){
+exports.saveCliente = function(cliente){
     return clienteData.saveCliente(cliente);
 }

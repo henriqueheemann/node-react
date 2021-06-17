@@ -2,7 +2,6 @@ const database = require('../database/database');
 
 exports.getClientes = function(){
     return database.query('select * from cliente');
-
 }
 
 exports.getCliente = function(clienteID){
@@ -14,6 +13,6 @@ exports.deleteCliente = function(clienteID){
 }
 
 exports.saveCliente = function(cliente){
-    return database.one('insert into cliente (codigo,nome,enedereco,telefone) values($1,$2,$3,$4) returning *',
-    [cliente.codigo,cliente.nome,cliente.telefone]);
+    return database.one('insert into cliente (nome,endereco,telefone) values($1,$2,$3) returning *',
+    [cliente.nome,cliente.endereco,cliente.telefone]);
 }
