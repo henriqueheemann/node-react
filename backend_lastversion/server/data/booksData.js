@@ -5,7 +5,7 @@ exports.getBooks = function(){
 }
 
 exports.getBook = function(bookID){
-    return database.query('select * from livro where codigo = $1',[bookID]);
+    return database.query('select * from livro where idlivro = $1',[bookID]);
 }
 
 exports.deleteBook = function(bookID){

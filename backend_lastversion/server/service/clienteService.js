@@ -1,6 +1,5 @@
 const clienteData = require('../data/clienteData');
 
-
 exports.getClientes = function(){
     return clienteData.getClientes();
 }
