@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import api from '../services/api';
+//var md5 = require('md5');
 
 function CadastroCliente() {
 
     const [nome, setNome] = useState('');
     const [endereco, setEndereco] = useState('');
     const [telefone, setTelefone] = useState('');
+    const [senha, setSenha] = useState('');
 
     async function handleCadastro(e) {
         e.preventDefault();
@@ -13,7 +15,8 @@ function CadastroCliente() {
         const dados = {
             nome,
             endereco,
-            telefone
+            telefone,
+            senha
         };
 
         try {
@@ -48,8 +51,14 @@ function CadastroCliente() {
                         placeholder="Telefone"
                         value={telefone}
                         onChange={e => setTelefone(e.target.value)}/> 
+                    
+                    <input 
+                        type="password"
+                        placeholder="Senha"
+                        value={senha}
+                        onChange={e => setSenha(e.target.value)}/> 
 
-                    <button className="button" type="submit">Cadastrar Livro</button>
+                    <button className="button" type="submit">Cadastrar Cliente</button>
                 </form>
     
 

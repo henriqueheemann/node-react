@@ -2,6 +2,7 @@ const express = require('express');
 const { func } = require('../database/database');
 const router = express.Router();
 const clienteService = require('../service/clienteService');
+//var md5 = require('md5');
 
 router.get('/clientes',async function(req,res){
     const clientes = await clienteService.getClientes();
